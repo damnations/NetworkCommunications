@@ -15,10 +15,10 @@ import java.util.ArrayList;
 
 public class NetworkCommunicationsRecyclerViewAdapter extends RecyclerView.Adapter<NetworkCommunicationsRecyclerViewAdapter.ViewHolder> {
     private final Context context;
-    private ArrayList<ImageList> modalList;
+    private ArrayList<ImageList> imageList;
 
-    public NetworkCommunicationsRecyclerViewAdapter(Context context, ArrayList<ImageList> modalList) {
-        this.modalList = modalList;
+    public NetworkCommunicationsRecyclerViewAdapter(Context context, ArrayList<ImageList> imageList) {
+        this.imageList = imageList;
         this.context = context;
     }
 
@@ -32,19 +32,19 @@ public class NetworkCommunicationsRecyclerViewAdapter extends RecyclerView.Adapt
 
     @Override
     public void onBindViewHolder(@NonNull NetworkCommunicationsRecyclerViewAdapter.ViewHolder holder, int position) {
-        ImageList modalListItem = modalList.get(position);
-        holder.imageView.setImageBitmap(modalListItem.image);
+        ImageList imageListItem = imageList.get(position);
+        holder.imageView.setImageBitmap(imageListItem.image);
 
         holder.deleteButton.setOnClickListener((View view) ->{
             Log.d("Remove Item", "onBindViewHolder: delete");
-            modalList.remove(holder.getAdapterPosition());
+            imageList.remove(holder.getAdapterPosition());
             notifyDataSetChanged();
         });
     }
 
     @Override
     public int getItemCount() {
-        return  modalList.size();
+        return  imageList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
