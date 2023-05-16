@@ -53,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.picture_choice_dialog, null);
 
+                builder.setView(view);
+
                 alertDialog = builder.create();
                 alertDialog.setCancelable(false);
 
                 Button faceImage = view.findViewById(R.id.faceButton);
                 Button pizzaImage = view.findViewById(R.id.pizzaButton);
                 Button furnitureImage = view.findViewById(R.id.furnitureButton);
-
-                builder.setView(view);
 
                 faceImage.setOnClickListener((View v) ->{
                     getPictures(faceImageLink);
