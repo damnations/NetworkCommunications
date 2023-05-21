@@ -55,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
                 builder.setView(view);
 
-                alertDialog = builder.create();
-                alertDialog.setCancelable(false);
-
                 Button faceImage = view.findViewById(R.id.faceButton);
                 Button pizzaImage = view.findViewById(R.id.pizzaButton);
                 Button furnitureImage = view.findViewById(R.id.furnitureButton);
@@ -72,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                     getPictures(furnitureImageLink);
                 });
 
+                alertDialog = builder.create();
+                alertDialog.setCancelable(false);
                 alertDialog.show();
             }
         });
